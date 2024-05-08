@@ -1,60 +1,55 @@
 # What Do you Mean
 
-## Resources
+## Group Members and Roles
+* Abbas Mirza: Frontend and website design
+* Swarnikaa Kiran: Frontend and website design
+* Yen-Hung Huang: Backend development, NLP model, and analysis API
+* Rishab Borah: Backend development and NLP model
 
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/3e23_jye)
 
 ## Tools and Frameworks
 
-### Huggingface transformers for sentiment analysis
-
-* [Huggingface](https://huggingface.co/blog/sentiment-analysis-python)
-
-### Sentiment Analysis libraries
-
 * [SpaCy](https://spacy.io/universe/project/spacy-textblob)
 * [BERT](https://huggingface.co/docs/transformers/model_doc/bert)
+* [Huggingface](https://huggingface.co/blog/sentiment-analysis-python)
 
-## Environment Setup - Development
+## Server Installation
 
-### Backend
+1. Clone
 
-1. Install Node Version Manager
+    ```bash
+    git clone https://github.com/CS222-UIUC-SP24/group-project-team-72.git
+    ```
+
+2. Install Node using NVM
+
+    **_NOTE:_** Close and reopen terminal after ```curl```.
 
     ```bash
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-    ```
-
-2. Install Node using nvm
-
-    ```bash
     nvm install 20.11.1
     ```
 
-3. Install Express using npm (skip this step)
-
-    ```bash
-    npm install express
-    npm install child_process
-    npm install axios
-    ```
-
-4. Run development server
+3. Run Express server
 
     ```bash
     cd backend/expressapp/
     DEBUG=expressapp:* npm start
     ```
 
-5. Install python libraries
+4. Start virtual environment
 
     ```bash
-    pip install flask
-    pip install transformers
+    cd backend/model
+    sudo apt install python3-venv
+    source env/bin/activate
     ```
 
-6. Run model server on another terminal on the same machine
+5. Run NLP models
+
+    **_NOTE:_** Run this command on a separate terminal on the same machine. Install python libraries as prompted.
 
     ```bash
-    flask --app model-http run
+    cd backend/model
+    python3 model-http.py
     ```
